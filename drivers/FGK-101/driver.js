@@ -7,6 +7,15 @@ const ZwaveDriver = require('homey-zwavedriver');
 
 module.exports = new ZwaveDriver(path.basename(__dirname), {
 	capabilities: {
+		alarm_tamper: {
+			command_class: 'COMMAND_CLASS_SENSOR_ALARM',
+			command_get: 'SENSOR_ALARM_GET',
+			command_get_parser: () => ({
+				'Sensor Type': 'General Purpose Alarm',
+			}),
+			command_report: 'SENSOR_ALARM_REPORT',
+			command_report_parser: report => report['Sensor State'] === 'alarm',
+		},
 		alarm_contact: [
 			{
 				command_class: 'COMMAND_CLASS_SENSOR_BINARY',

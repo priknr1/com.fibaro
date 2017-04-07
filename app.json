@@ -3,7 +3,7 @@
   "name": {
     "en": "Fibaro"
   },
-  "version": "1.4.1",
+  "version": "1.4.2",
   "compatibility": ">=1.1.9",
   "description": {
     "en": "Fibaro devices for Homey"
@@ -35,6 +35,10 @@
       {
         "name": "Ted Tolboom",
         "email": "dTNL.Homey@gmail.com"
+      },
+      {
+        "name": "Patrick van der Westen",
+        "email": "pvdwesten@hotmail.com"
       }
     ]
   },
@@ -5138,11 +5142,12 @@
           }
         },
         "associationGroups": [
-          3
+          1,2,3
         ]
       },
       "class": "sensor",
       "capabilities": [
+        "alarm_tamper",
         "alarm_contact",
         "measure_temperature",
         "measure_battery"
